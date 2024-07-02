@@ -71,8 +71,7 @@ def create_parsed_dictionary(elements, all_counter, pdf_path):
             document = extractor.analyze_document(file_source='output.png',features=[TextractFeatures.TABLES])
             if len(document.tables) > 0:
                 for k in range(len(document.tables)):
-                    #table_html = document.tables[0].to_pandas().to_html()
-                    table_format = document.tables[k].to_pandas().to_markdown()
+                    table_format = document.tables[k].to_pandas().to_html()
                     parsed_doc[curr_page] += table_format
                     parsed_doc[curr_page] += '\n'
             else:
