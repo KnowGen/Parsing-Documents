@@ -22,6 +22,7 @@ To get started with the pipeline, follow these steps:
    - Install required packages: `pip install -r requirements.txt`
 
 4. **Run the Pipeline**
-   - Execute the pipeline: `python parsing.py --document_path "path/to/your/document.pdf" --save_path "path/to/save/output.json"`
+   - Execute the pipeline: `python main_cron.py --document_path "test.pdf"` . The json file will be saved in the same folder.
+   - Execute the pipeline: `python main_cron.py --document_path "test.pdf" --save_folder "output_folder"` . The json file will be saved in the folder output_folder.
 
 These steps will guide you through setting up the environment, installing dependencies, and running the script to process your PDF files and save the extracted data in JSON format.
