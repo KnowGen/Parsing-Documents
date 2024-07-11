@@ -19,10 +19,8 @@ def main():
     """
     args = parse_command_line_arguments()
 
-    # Suprimir advertencias específicas de transformers
     logging.set_verbosity_error()
 
-    # Suprimir advertencias generales
     with warnings.catch_warnings():
         warnings.simplefilter("ignore")
         elements = partition_pdf(filename=args.document_path, infer_table_structure=True, include_page_breaks=True, languages=['ita', 'eng'])
@@ -30,11 +28,9 @@ def main():
     
     parsed_doc = create_parsed_dictionary(elements, all_counter, args.document_path)
     
-    # Determinar el nombre del archivo de salida
     base_filename = os.path.splitext(os.path.basename(args.document_path))[0]
     output_filename = base_filename + '.json'
     
-    # Determinar la carpeta de salida
     if args.save_folder:
         if not os.path.exists(args.save_folder):
             os.makedirs(args.save_folder)
